@@ -1,5 +1,4 @@
 @use 'colors' as *;
-@use 'mixins' as *;
 @use 'components' as *;
 @use 'css_reset' as *;
 
@@ -209,7 +208,7 @@ html {
 	height: 100vh;
 	text-align: center;
 	color: $main;
-	background-image: $main-gradient, url('./src/img/bgc_small.jpg');
+	background-image: $main-gradient, url('./src/img/bgc-big.jpg');
 	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
