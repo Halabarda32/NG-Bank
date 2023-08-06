@@ -208,7 +208,7 @@ html {
 	height: 100vh;
 	text-align: center;
 	color: $main;
-	background-image: $main-gradient, url('/src/img/bgc-big.jpg');
+	background-image: $main-gradient, url('../img/bgc-small.jpg');
 	background-size: cover;
 	background-position: center;
 	background-attachment: scroll;
@@ -380,15 +380,15 @@ html {
 			transition: transform 1s, opacity 1s;
 
 			&--first {
-				background-image: $offer-gradient-one, url('./img/coins-small.jpg');
+				background-image: $offer-gradient-one, url('../img/coins-small.jpg');
 			}
 
 			&--second {
-				background-image: $offer-gradient-two, url('./img/wallet-small.jpg');
+				background-image: $offer-gradient-two, url('../img/wallet-small.jpg');
 			}
 
 			&--third {
-				background-image: $offer-gradient-three, url('./img/crypto-small.jpg');
+				background-image: $offer-gradient-three, url('../img/crypto-small.jpg');
 			}
 
 			&-title {
