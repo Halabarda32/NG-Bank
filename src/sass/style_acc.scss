@@ -841,7 +841,7 @@ main {
 .footer {
 	position: relative;
 	padding: 6em 0;
-	background-image: url('./img/hero-footer-small.jpg');
+	background-image: url('../img/hero-footer-small.jpg');
 	background-position: top;
 	background-size: cover;
 	background-attachment: fixed;
@@ -1270,7 +1270,7 @@ main {
 	}
 
 	.footer {
-		background-image: url('./img/hero-footer-big.jpg');
+		background-image: url('../img/hero-footer-big.jpg');
 
 		&__box {
 			h3 {
