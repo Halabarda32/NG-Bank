@@ -1,0 +1,36 @@
+$main: #ebecf2;
+$tablehover: #d3d4db;
+$table: #e4d7bb;
+$box: #2e2f31b7;
+$gold: #cbb279;
+$darkgold: #2c2919;
+$dark: #232323;
+$green: #13c86c;
+$red: #ff6868;
+$darkblue: #181725;
+
+$main-gradient: linear-gradient(
+	125deg,
+	rgba(2, 0, 36, 1) 0%,
+	rgba(63, 65, 19, 0.4023984593837535) 49%,
+	rgba(62, 58, 30, 0.396796218487395) 100%
+);
+
+$acc-gradient: linear-gradient(125deg, rgb(2, 0, 26) 0%, rgba(30, 31, 5, 0.705) 49%, rgba(58, 52, 8, 0.596) 100%);
+
+$second-gradient: linear-gradient(
+	125deg,
+	rgba(2, 0, 36, 1) 0%,
+	rgba(28, 29, 9, 0.402) 49%,
+	rgba(29, 27, 9, 0.397) 100%
+);
+
+$aboutus-gradient-one: linear-gradient(13deg, rgba(62, 55, 48, 1) 0%, rgba(45, 42, 42, 1) 38%);
+$aboutus-gradient-two: linear-gradient((250deg, rgb(112, 101, 78) 0%, rgba(54, 50, 50, 1) 100%));
+$aboutus-gradient-three: radial-gradient(circle, rgba(45, 43, 38, 1) 0%, rgba(85, 84, 84, 1) 200%);
+
+$offer-gradient-one: linear-gradient(13deg, rgba(43, 40, 38, 0.9) 0%, rgba(116, 114, 106, 0.3) 38%);
+$offer-gradient-two: linear-gradient((250deg, rgba(35, 62, 87, 0.75) 0%, rgba(21, 33, 65, 0.75) 100%));
+$offer-gradient-three: radial-gradient(circle, rgba(45, 43, 38, 0.75) 0%, rgba(138, 115, 14, 0.5) 200%);
+
+$lightwhite-gradient: linear-gradient(348deg, #ddd9d7, #d7d7d7 80%);

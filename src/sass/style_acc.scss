@@ -1,0 +1,1307 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+@use 'components' as *;
+@use 'css_reset' as *;
+
+html {
+	font-size: 62.5%;
+	scroll-padding-top: 88px;
+	scroll-behavior: smooth;
+}
+
+.body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+	background-color: $dark;
+
+	&-lock {
+		overflow: hidden;
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	// align-items: flex-start;
+	overflow: hidden;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.left-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	// height: 1200px;
+	width: 100%;
+	background-color: $dark;
+}
+
+.right-section {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: $dark;
+}
+
+.link-animation {
+	position: relative;
+	display: inline-block;
+	margin: 0.2em;
+	padding: 0.4em;
+	font-size: 2rem;
+	color: $dark;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.3s;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		bottom: 0;
+		border-bottom: 2px solid $gold;
+		transition: 0.3s;
+	}
+
+	&::before {
+		right: 50%;
+	}
+
+	&::after {
+		left: 50%;
+	}
+
+	&:hover::before,
+	&:hover::after {
+		width: 50%;
+	}
+}
+
+// ---NAV---
+
+.nav__items-desktop {
+	display: none;
+}
+
+.wrapper-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	top: 0;
+	padding: 0.8em 0;
+	width: 100%;
+	border-bottom: 2px solid $gold;
+	background-image: $main-gradient;
+	transition: background-color 0.6s;
+	z-index: 100;
+
+	&__logo {
+		font-weight: bold;
+		font-size: 2.4rem;
+		margin-left: 0.5em;
+		margin-right: auto;
+		padding: 0.7em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $main;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $gold;
+		}
+	}
+
+	&__logo span {
+		color: $gold;
+	}
+
+	&__items {
+		&-mobile {
+			position: fixed;
+			top: 0;
+			right: 0;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			width: 100%;
+			transform: translateY(-300%);
+			transition: transform 0.8s;
+			background-color: $main;
+			z-index: 1000;
+
+			&--active {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__item {
+		color: $main;
+
+		&-mobile {
+			margin: 1.3em;
+		}
+	}
+
+	&__burger-btn {
+		position: fixed;
+		top: 17px;
+		right: 17px;
+		padding: 1em;
+		background: none;
+		border: 2px solid transparent;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.6s;
+		z-index: 1000;
+
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+
+		&:hover {
+			.nav__burger-btn__bars::after,
+			.nav__burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+
+		&__bars,
+		&__bars::after,
+		&__bars::before {
+			position: absolute;
+			right: 0;
+			height: 3px;
+			content: '';
+			background-color: $gold;
+			border-radius: 2px;
+			transition: width 0.3s;
+		}
+
+		&__bars {
+			width: 100%;
+
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+
+			&::before {
+				top: 27px;
+				width: 30%;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+}
+
+.fa-circle-user {
+	font-size: 2.3rem;
+}
+
+.header h1 span {
+	color: $gold;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5em;
+	text-align: center;
+	color: $main;
+	background-size: cover;
+	background-position: center;
+	// background-attachment: scroll;
+	// overflow: hidden;
+
+	&__heading-acc {
+		font-size: 2.6rem;
+		text-transform: uppercase;
+		z-index: 11;
+
+		span {
+			color: $gold;
+		}
+	}
+
+	&__hero-img {
+		position: absolute;
+		height: 100%;
+		width: 200%;
+		background-image: $acc-gradient, url('/src/img/hero-img_acc.jpg');
+		background-size: cover;
+		background-position: bottom;
+		background-attachment: fixed;
+		z-index: 10;
+	}
+}
+
+// ---TRANSACTIONS---
+
+.transactions {
+	// margin: 1em;
+	background-color: transparent;
+
+	h3 {
+		margin-bottom: 0.5em;
+		font-size: 1.8rem;
+		text-align: center;
+	}
+}
+
+.transaction__list {
+	display: flex;
+}
+
+.income__area,
+.expenses__area {
+	// margin: 0 20px;
+	padding: 0.1em;
+	width: 40%;
+}
+
+.income__area h3,
+.income__area .transaction__amount {
+	font-size: 1.3rem;
+	color: $green;
+	font-weight: bold;
+}
+
+.expenses__area h3,
+.expenses__area .transaction__amount {
+	font-size: 1.3rem;
+	color: $red;
+	font-weight: bold;
+}
+
+.transaction {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	height: 20px;
+	// padding: 0.8em 0;
+	border-bottom: 1px solid $main;
+}
+
+.transaction:last-child {
+	border-bottom: none;
+}
+
+.transaction-name {
+	font-size: 1rem;
+	color: $main;
+}
+
+.transaction-name i {
+	margin-right: 0.5em;
+}
+
+.delete {
+	margin-left: 0.8em;
+	background: none;
+	border: none;
+	font-size: 1.3rem;
+	color: $gold;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.delete:hover {
+	transform: scale(0.8);
+}
+
+.balance {
+	padding: 0.1em;
+	width: 20%;
+	background-color: #2e2f31b7;
+	border-radius: 3px;
+
+	&__title {
+		margin-bottom: 2em;
+		text-align: center;
+		// text-transform: uppercase;
+		font-size: 1.4rem;
+		color: $gold;
+		font-weight: 200;
+	}
+
+	&__available-money {
+		margin-top: -10px;
+		text-align: center;
+		font-size: 1.4rem;
+		color: $main;
+	}
+}
+
+.controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 4em;
+}
+
+.controls button {
+	margin: 0.5em 1em;
+	padding: 1em 2em;
+	width: 100%;
+	font-size: 1.3rem;
+	color: $main;
+	border: 1px solid $gold;
+	border-radius: 6px;
+	background: none;
+	// font-size: 1rem;
+	transition: color 0.3s, background-color 0.3s;
+	cursor: pointer;
+}
+
+.controls button:hover {
+	color: $main;
+	background-color: $gold;
+}
+
+.controls i {
+	margin-right: 10px;
+}
+
+.add-transaction-panel {
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateY(-300%);
+	transition: transform 0.8s;
+	background-image: $aboutus-gradient-one;
+	z-index: 1000;
+
+	&--active {
+		transform: translateY(0);
+	}
+	// display: none;
+	// justify-content: center;
+	// align-items: center;
+	// flex-direction: column;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// color: $main;
+	// background-image: $aboutus-gradient-one;
+	// width: 100%;
+	// height: 100%;
+	// z-index: 1000;
+}
+
+.add-transaction-panel {
+	&__title {
+		margin-bottom: 0;
+		text-transform: uppercase;
+		color: $gold;
+	}
+
+	&__btns {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 70%;
+	}
+}
+
+.add-transaction-panel label {
+	margin-top: 2em;
+	margin-bottom: 5px;
+	font-size: 2.6rem;
+	color: $main;
+}
+
+.add-transaction-panel small {
+	margin-bottom: 1em;
+	font-style: italic;
+	color: $gold;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select {
+	width: 70%;
+	min-width: 300px;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select,
+.add-transaction-panel button {
+	padding: 0.5em 1em;
+	border: 1px solid $dark;
+	border-radius: 6px;
+}
+
+.add-transaction-panel input,
+.add-transaction-panel select,
+.add-transaction-panel option {
+	font-size: 1.8rem;
+}
+
+// .add-transaction-panel .panel-buttons {
+// 	display: flex;
+// 	justify-content: center;
+// 	margin-top: 2em;
+// }
+
+.add-transaction-panel button {
+	margin: 2em 0.6em;
+	padding: 1em 2em;
+	font-size: 1.6rem;
+	color: $main;
+	border: 1px solid $gold;
+	background: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $gold;
+	}
+}
+
+// ---DEBIT-CARD---
+
+.debit-card {
+	// margin: 1em;
+	// height: 50vh;
+	border-bottom: 2px solid $main;
+}
+
+.debit-card__box {
+	display: flex;
+	justify-content: space-around;
+
+	&-img {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		img {
+			width: 150px;
+			margin-top: 2em;
+		}
+	}
+
+	&-info {
+		margin: 1em;
+		padding: 0.5em;
+
+		h3 {
+			text-transform: uppercase;
+			font-size: 3rem;
+			font-weight: 200;
+			color: $gold;
+			border-bottom: 2px solid $main;
+		}
+
+		.span {
+			margin: 0.5em 0;
+			font-size: 1.5rem;
+			color: $gold;
+			font-weight: bold;
+		}
+	}
+
+	&-text {
+		display: flex;
+		flex-direction: column;
+		font-size: 1.4rem;
+		color: $main;
+	}
+}
+
+.debit-number__btn {
+	width: 10em;
+	font-size: 1.3rem;
+	color: $main;
+	background-color: transparent;
+}
+
+.debit-number-secure {
+	width: 8em;
+	-webkit-text-security: disc;
+	text-align: left;
+	letter-spacing: 3px;
+}
+
+// ---MESSAGE---
+
+.messages-panel {
+	justify-content: space-evenly;
+	align-items: center;
+	position: fixed;
+	bottom: -200%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2.5em 1em;
+	height: 100vh;
+	width: 100%;
+	background-image: $lightwhite-gradient;
+	transition: transform 0.8s;
+	z-index: 1000;
+
+	&--active {
+		display: flex;
+		transform: translate(-50%, -200%);
+	}
+
+	&-heading {
+		position: absolute;
+		top: 2%;
+		left: 50%;
+		transform: translate(-50%, -2%);
+		text-align: center;
+		font-size: 2.6rem;
+		color: $gold;
+	}
+}
+
+.messages__box {
+	display: flex;
+	flex-direction: column;
+	margin: 1em 0.2em;
+	background-image: $lightwhite-gradient;
+	border-radius: 8px;
+	box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+	max-height: calc(100vh - 150px);
+	overflow-y: auto;
+}
+
+.messages__box-show-message-text {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1em 2em;
+	height: 100vh;
+	width: 100%;
+	background-image: $lightwhite-gradient;
+	max-height: calc(100vh - 0px);
+	overflow-y: auto;
+
+	&-btn {
+		display: none;
+		display: block;
+		position: absolute;
+		top: 2%;
+		right: 2%;
+		padding: 0.1em;
+		font-size: 2.6rem;
+		color: $dark;
+		background-color: transparent;
+	}
+}
+
+.message__box-show {
+	display: none;
+	flex-direction: column;
+	&-heading h3 {
+		margin: 1em;
+		text-align: center;
+		font-size: 2.6rem;
+		color: $gold;
+	}
+
+	&-text {
+		font-size: 1.6rem;
+		text-indent: 10%;
+	}
+}
+
+.message__box {
+	padding: 1em 2em;
+	margin: 0.2em 0;
+	border-bottom: 2px solid $gold;
+
+	&-heading h3 {
+		margin: 0.5em 0;
+		font-size: 2rem;
+		color: $dark;
+	}
+
+	&-text {
+		font-size: 1.6rem;
+
+		&-button {
+			margin-top: 1em;
+			padding: 0.5em;
+			font-size: 1.6rem;
+			color: $gold;
+			background-color: transparent;
+			transition: color 0.3s;
+
+			&:hover {
+				color: $darkgold;
+			}
+		}
+	}
+}
+
+.message__box:nth-last-child(1) {
+	border-bottom: none;
+}
+
+.messages-close {
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	padding: 0.1em;
+	font-size: 2.6rem;
+	color: $dark;
+	background-color: transparent;
+	transition: color 0.3s;
+
+	&:hover {
+		color: $gold;
+	}
+}
+
+.welcome-message {
+	display: none;
+	// display: flex;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.welcome-message h3 {
+	font-size: 3rem;
+	color: $dark;
+}
+
+.welcome-message i {
+	font-size: 7rem;
+	color: $gold;
+}
+// ---SLIDER---
+
+.offers {
+	&__box {
+		position: relative;
+		margin: 1em;
+		height: 24em;
+		border-radius: 8px;
+		background-color: $box;
+		box-shadow: 3px 3px 10px rgba(46, 46, 46, 0.18);
+		transition: transform 0.3s;
+		overflow: hidden;
+
+		&:hover {
+			transform: scale(0.95);
+		}
+	}
+
+	&__box-img {
+		position: relative;
+
+		img {
+			width: 100%;
+			height: 13em;
+			object-fit: cover;
+		}
+
+		&-shadow {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(1, 14, 27, 0.3);
+		}
+	}
+
+	&__box-info {
+		h3 {
+			margin-top: 0.5em;
+			padding: 0.5em;
+			font-size: 1.8rem;
+			color: $main;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
+
+	&__box-text {
+		padding: 0 2em;
+		margin-top: 0.5em;
+		margin-bottom: 1em;
+		font-size: 1.6rem;
+		color: $main;
+	}
+}
+
+// ---ACCORDION---
+
+.accordion {
+	&:hover {
+		transform: scale(0.95);
+	}
+
+	&__box {
+		padding: 1em;
+
+		&-btn {
+			padding: 1em;
+			width: 100%;
+			text-align: left;
+			border: none;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			color: $main;
+			border: 3px solid $gold;
+			border-radius: 8px;
+			background-color: $dark;
+			transition: background-color 0.3s;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				background-color: $gold;
+				color: $main;
+				border: 3px solid $gold;
+				outline: none;
+			}
+
+			&:hover .fa-solid,
+			&:focus .fa-solid {
+				color: $main;
+			}
+		}
+
+		&-info {
+			display: none;
+			padding: 1em 0;
+
+			&-title span,
+			&-text span {
+				font-weight: bold;
+				color: $gold;
+			}
+
+			&-text {
+				margin: 0.5em;
+				text-align: left;
+				font-size: 1.8rem;
+				color: $main;
+			}
+		}
+	}
+}
+
+// ---CHART---
+
+.chart {
+	z-index: 10;
+
+	&:hover {
+		transform: scale(0.95);
+	}
+}
+
+.active {
+	display: block;
+}
+// ---FOOTER---
+
+.footer {
+	position: relative;
+	padding: 6em 0;
+	background-image: url('../img/hero-footer-small.jpg');
+	background-position: top;
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: $main;
+
+		h3 {
+			font-size: 1.8rem;
+			margin-bottom: 1.5em;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		&-item {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			// justify-content: center;
+			align-items: center;
+			margin: 1em;
+
+			p {
+				font-size: 1.8rem;
+				margin: 0.3em;
+			}
+
+			.social-media {
+				display: flex;
+				flex-wrap: nowrap;
+				font-size: 2.6rem;
+
+				a {
+					padding: 1em;
+					color: $main;
+				}
+
+				a:hover {
+					color: $gold;
+				}
+			}
+		}
+	}
+
+	&-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(1, 14, 27, 0.8);
+		z-index: -5;
+	}
+
+	.copy {
+		display: block;
+		text-align: center;
+		padding: 1em;
+		color: $main;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.active {
+	color: $gold;
+}
+
+// ---MEDIA---
+
+// 576
+@media (min-width: 576px) {
+	.nav {
+		&__logo {
+			font-size: 2.6rem;
+		}
+
+		&__item {
+			&-mobile {
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.right-section {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.header {
+		&__heading-acc {
+			font-size: 3rem;
+		}
+	}
+
+	.transactions {
+		h3 {
+			font-size: 1.4em;
+		}
+	}
+
+	.income__area .transaction__amount {
+		font-size: 1.3rem;
+	}
+
+	.expenses__area .transaction__amount {
+		font-size: 1.3rem;
+	}
+
+	.balance {
+		background-color: transparent;
+		border-radius: none;
+
+		&__title {
+			margin-bottom: 2.2em;
+			font-size: 1.8rem;
+		}
+
+		&__available-money {
+			font-size: 2.6rem;
+		}
+	}
+
+	.transaction-name {
+		font-size: 1.3rem;
+	}
+
+	.debit-card__box {
+		&-img {
+			img {
+				width: 220px;
+				margin-top: 0.5em;
+			}
+
+			h3 {
+				font-size: 2.3rem;
+			}
+		}
+
+		&-info {
+			.span {
+				font-size: 1.8rem;
+			}
+		}
+
+		&-text {
+			font-size: 1.6rem;
+		}
+	}
+}
+
+// 768
+@media (min-width: 768px) {
+	html {
+		scroll-padding-top: 95px;
+	}
+
+	.nav {
+		&__logo {
+			font-size: 2.6rem;
+		}
+
+		&__item {
+			&-mobile {
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.header {
+		padding: 2em;
+		&__heading-acc {
+			font-size: 3.6rem;
+		}
+	}
+
+	.transactions {
+		h3 {
+			font-size: 1.6em;
+		}
+	}
+
+	.income__area .transaction__amount {
+		font-size: 1.6rem;
+	}
+	.expenses__area .transaction__amount {
+		font-size: 1.6rem;
+	}
+
+	.balance {
+		&__title {
+			margin-bottom: 2.2em;
+			font-size: 2.2rem;
+		}
+
+		&__available-money {
+			font-size: 3rem;
+		}
+	}
+
+	.transaction-name {
+		font-size: 1.6rem;
+	}
+
+	.controls {
+		margin-top: 9em;
+	}
+
+	.debit-card__box {
+		&-img {
+			img {
+				width: 300px;
+				margin-top: 0;
+			}
+
+			h3 {
+				font-size: 2.5rem;
+			}
+		}
+
+		&-info {
+			.span {
+				font-size: 2rem;
+			}
+		}
+
+		&-text {
+			font-size: 1.8rem;
+		}
+	}
+
+	.debit-number__btn {
+		text-align: left;
+		font-size: 2rem;
+	}
+
+	.debit-number-secure {
+		width: 10em;
+		letter-spacing: 4px;
+	}
+
+	.messages-panel {
+		flex-direction: row;
+		align-items: flex-start;
+		height: 80%;
+		width: 100%;
+		border: 2px solid $gold;
+		border-top-left-radius: 16px;
+		border-top-right-radius: 16px;
+
+		&--active {
+			transform: translate(-50%, -250%);
+		}
+
+		&-heading {
+			left: 50%;
+			transform: translate(-50%, -2%);
+			font-size: 3rem;
+		}
+	}
+
+	.messages__box {
+		margin: 1em 0;
+		height: 100%;
+		width: 40%;
+	}
+
+	.messages__box-show-message-text {
+		position: static;
+		display: flex;
+		align-items: center;
+		padding: 1em 2em;
+		margin: 1em;
+		height: 100%;
+		width: 60%;
+		background-image: $lightwhite-gradient;
+		border-radius: 8px;
+		box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+		max-height: calc(100vh - 0px);
+		overflow-y: auto;
+
+		&-btn {
+			display: none;
+		}
+	}
+
+	.message__box-show {
+		display: none;
+		&-heading h3 {
+			font-size: 3rem;
+		}
+
+		&-text {
+			font-size: 1.8rem;
+			text-indent: 10%;
+		}
+
+		&-text p {
+			text-align: justify;
+		}
+	}
+
+	.welcome-message {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 100%;
+	}
+
+	.welcome-message h3 {
+		font-size: 3rem;
+		color: $dark;
+	}
+
+	.welcome-message i {
+		font-size: 7rem;
+		color: $gold;
+	}
+
+	.footer {
+		&__box {
+			flex-direction: row;
+
+			h3 {
+				font-size: 1.8rem;
+			}
+
+			&-item {
+				margin: 1em 0.3em;
+
+				p {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}
+
+// 992
+@media (min-width: 992px) {
+	main {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.nav {
+		&__logo {
+			font-size: 2.7rem;
+		}
+
+		&__burger-btn {
+			display: none;
+		}
+
+		&__items-desktop {
+			display: flex;
+		}
+	}
+
+	.left-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 1200px;
+		width: 65%;
+		background-color: $dark;
+	}
+
+	.right-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: stretch;
+		align-items: stretch;
+		width: 35%;
+		background-color: $dark;
+	}
+
+	.header {
+		padding: 2em;
+		&__heading-acc {
+			font-size: 4.2rem;
+		}
+	}
+
+	.transactions {
+		h3 {
+			font-size: 2em;
+		}
+	}
+
+	.income__area .transaction__amount {
+		font-size: 1.8rem;
+	}
+
+	.expenses__area .transaction__amount {
+		font-size: 1.8rem;
+	}
+
+	.balance {
+		&__title {
+			margin-bottom: 1.7em;
+			font-size: 2.5rem;
+		}
+
+		&__available-money {
+			font-size: 3.8rem;
+		}
+	}
+
+	.transaction-name {
+		font-size: 1.8rem;
+	}
+
+	.debit-card {
+		border-bottom: none;
+	}
+
+	.footer {
+		background-image: url('../img/hero-footer-big.jpg');
+
+		&__box {
+			h3 {
+				font-size: 2.2rem;
+			}
+
+			&-item {
+				margin: 1.2em 1em;
+
+				p {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
+
+// 1100
+@media (min-width: 1100px) {
+	.aboutus {
+		&__box {
+			padding: 2em;
+
+			&-heading {
+				margin-bottom: 1em;
+			}
+
+			&-link {
+				margin: 0.5em;
+			}
+		}
+	}
+}

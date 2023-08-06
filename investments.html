@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./dist/css/style_invest.min.css">
+    <script src="https://kit.fontawesome.com/c97d3158f5.js" crossorigin="anonymous"></script>
+    <title>NGBank</title>
+</head>
+
+<body class="body">
+    <nav class="nav">
+        <div class="wrapper wrapper-nav ">
+            <a href="#" class="nav__logo">
+                <i class="fa-solid fa-arrow-trend-up"></i> Next Gen <span>bank</span>
+            </a>
+            <button class="nav__burger-btn">
+                <div class="nav__burger-btn__box">
+                    <div class="nav__burger-btn__bars"></div>
+                </div>
+            </button>
+            <div class="nav__items nav__items-desktop">
+                <a href="account.html" class="nav__item link-animation">Twoje konto</a>
+                <a href="index.html" class="nav__item link-animation"><i class="fa-solid fa-power-off"></i></a>
+            </div>
+            <div class="nav__items nav__items-mobile">
+                <a href="account.html" class="nav__item-mobile link-animation">Twoje konto</a>
+                <a href="index.html" class="nav__item-mobile link-animation">wyloguj</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+
+        <section class="crypto acc-padding">
+            <h2 class="acc-heading">Ceny kryptowalut</h2>
+
+            <button class="currency-btn btn-special-animation">usd <i class="fa-solid fa-caret-down"></i></button>
+            <div class="exchange__modal">
+                <h3>Wyświetl w innych walutach!</h3>
+                <button class="exchange__modal-close"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                <div class="exchange__modal-btns">
+                    <button class="exchange-btn" data-currency="GBP"><img src="src/img/icons/gb.svg"
+                            alt="Grafika przedstawia flagę Wielkiej Brytanii"> GBP</button>
+                    <button class="exchange-btn" data-currency="PLN"><img src="src/img/icons/pl.svg"
+                            alt="Grafika przedstawia flagę Polski"> PLN</button>
+                    <button class="exchange-btn" data-currency="USD"><img src="src/img/icons/us.svg"
+                            alt="Grafika przedstawia flagę Stanów Zjednoczonych"> USD</button>
+                </div>
+            </div>
+
+            <div class="crypto__table">
+                <table class="coinTable">
+                    <thead>
+                        <tr>
+                            <th onclick="sortTable(0)" scope="col">#</th>
+                            <th onclick="sortTable(1)" scope="col">Nazwa</th>
+                            <th onclick="sortTable(2)" scope="col">Cena</th>
+                            <th onclick="sortTable(3)" scope="col">24h</th>
+                            <th onclick="sortTable(4)" scope="col">Wolumen24h</th>
+                            <th onclick="sortTable(5)" scope="col">Kapitalizacja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__box">
+                <div class="footer__box-item">
+                    <h3>główna siedziba</h3>
+                    <p>ul. Halabardników Śląskich 17C</p>
+                    <p>32-532 Warszawa</p>
+                    <p>+48 996 785 220</p>
+                    <p>ngbank@toor.com</p>
+                </div>
+
+                <div class="footer__box-item">
+                    <h3>social media</h3>
+                    <div class="social-media">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__box-item">
+                    <h3>siedziba w londynie</h3>
+                    <p>780-522 King Street</p>
+                    <p>London 556 666</p>
+                    <p>+44 20 9965 3331</p>
+                    <p>ngbank_london@toor.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-shadow"></div>
+        <p class="copy"> &copy; <span class="footer__year"></span> | Next Gen Bank</p>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./dist/js/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="./dist/js/script_crypto_sorting.min.js"></script>
+    <script src="./dist/js/script_crypto.min.js"></script>
+</body>
+
+</html>

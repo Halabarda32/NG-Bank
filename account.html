@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./dist/css/style_acc.min.css">
+    <script src="https://kit.fontawesome.com/c97d3158f5.js" crossorigin="anonymous"></script>
+    <title>NGBank</title>
+</head>
+
+<body class="body">
+    <nav class="nav">
+        <div class="wrapper wrapper-nav ">
+            <a href="#" class="nav__logo">
+                <i class="fa-solid fa-arrow-trend-up"></i> Next Gen <span>bank</span>
+            </a>
+            <button class="nav__burger-btn">
+                <div class="nav__burger-btn__box">
+                    <div class="nav__burger-btn__bars"></div>
+                </div>
+            </button>
+            <div class="nav__items nav__items-desktop">
+                <a href="investments.html" class="nav__item link-animation">inwestycje</a>
+                <a href="#messages" class="nav__item link-animation messages">wiadomości</a>
+                <a href="index.html" class="nav__item link-animation"><i class="fa-solid fa-power-off"></i></a>
+            </div>
+            <div class="nav__items nav__items-mobile">
+                <a href="investments.html" class="nav__item-mobile link-animation">inwestycje</a>
+                <a href="#messages" class="nav__item-mobile link-animation messages-mobile">wiadomości</a>
+                <a href="index.html" class="nav__item-mobile link-animation">wyloguj</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="left-section">
+            <section id="transactions" class="transactions section acc-padding">
+                <div class="wrapper">
+                    <h2 class="acc-heading">Lista transakcji</h2>
+
+                    <div class="transaction__list">
+
+                        <div class="income__area">
+                            <h3>Przychód:</h3>
+                        </div>
+                        <div class="expenses__area">
+                            <h3>Wydatki:</h3>
+                        </div>
+
+                        <div class="balance">
+                            <h2 class="balance__title">Dostępne środki:</h2>
+                            <p class="balance__available-money">0zł</p>
+                        </div>
+                    </div>
+
+
+                    <div class="controls">
+                        <button class="add-transaction"><i class="fas fa-plus"></i> Dodaj
+                            transakcję</button>
+                        <button class="delete-all"><i class="far fa-trash-alt"></i> Usuń
+                            wszystko</button>
+                    </div>
+
+
+                    <div class="add-transaction-panel">
+                        <h2 class="add-transaction-panel__title">Dodaj nową transakcję</h2>
+                        <label for="name">Nazwa:</label>
+                        <small>(podaj nazwę transakcji, nie dłuższą niż 10 znaków.)</small>
+                        <input type="text" id="name"></input>
+
+                        <label for="amount">Kwota:</label>
+                        <small>(podaj kwotę transakcji)
+                        </small>
+                        <input type="number" id="amount">
+
+                        <label for="category">Wybierz kategorię:</label>
+                        <small>( [ + ] oznacza przychód, [ - ] oznacza wydatek)</small>
+                        <select id="category" onchange="selectCategory()">
+                            <option value="none" selected disabled></option>
+                            <option value="income">[ + ] Przychód</option>
+                            <option value="income">[ + ] Przychód z inwestycji</option>
+                            <option value="income">[ + ] Wypłata</option>
+                            <option value="shopping">[ - ] Zakupy</option>
+                            <option value="food">[ - ] Jedzenie</option>
+                            <option value="investments">[ - ] Inwestycje</option>
+                            <option value="entertainment">[ - ] Rozrywka</option>
+                            <option value="services">[ - ] Usługi</option>
+                            <option value="bills">[ - ] Rachunki</option>
+                            <option value="withdrawal">[ - ] Wypłata środków</option>
+                        </select>
+
+                        <div class="add-transaction-panel__btns">
+                            <button class="save"><i class="fas fa-save"></i> Zapisz</button>
+                            <button class="cancel"><i class="far fa-window-close"></i>
+                                Anuluj</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <header class="header">
+                    <h2 class="header__heading-acc">Next Gen <span>account</span></h2>
+                    <div class="header__hero-img"></div>
+                </header>
+            </section>
+            <section class="debit-card section acc-padding">
+                <div class="wrapper">
+                    <h2 class="acc-heading">NG Bank Debit Card</h2>
+                    <div class="debit-card__box">
+                        <div class="debit-card__box-img">
+                            <img src="./src/img/icons/card-2-svgrepo-com.svg"
+                                alt="Grafika przedstawia reprezentację Twojej karty NG Bank">
+                        </div>
+                        <div class="debit-card__box-info">
+                            <h3>Debit Card VIP</h3>
+                            <p class="debit-card__box-text"><span class="span">Numer karty:</span>
+                                <button class="debit-number__btn"><span
+                                        class="debit-number__btn-text debit-number-secure">5855 1212 7564 0089</span>
+                                </button>
+                            </p>
+                            <p class="debit-card__box-text"><span class="span">Debet:</span> Włączony</p>
+                            <p class="debit-card__box-text"><span class="span">Status:</span> Aktywna</p>
+                            <p class="debit-card__box-text"><span class="span">Ważna do:</span> 11/30</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="right-section special-padding">
+            <div class="offers container">
+                <div class="offers__boxes">
+                    <div class="offers__box">
+                        <div class="offers__box-img">
+                            <img src="/src/img/slider-points.jpg" alt="Zdjęcie grupę osób podających sobię ręce">
+                            <div class="offers__box-img-shadow"></div>
+                        </div>
+                        <div class="offers__box-info">
+                            <h3>Płać i zdobywaj punkty!</h3>
+                            <p class="offers__box-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus harum alias labore
+                                eius perferendis, ex assumenda?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offers__box">
+                        <div class="offers__box-img">
+                            <img src="/src/img/slider-wallet.jpg" alt="Zdjęcie skarbonki">
+                            <div class="offers__box-img-shadow"></div>
+                        </div>
+                        <div class="offers__box-info">
+                            <h3>Sprawdź nowy NG-Wallet już teraz!</h3>
+                            <p class="offers__box-text">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio iure cupiditate
+                                rerum facilis tempora iusto obcaecati?
+                            </p>
+                        </div>
+                    </div>
+                    <div class="offers__box">
+                        <div class="offers__box-img">
+                            <img src="/src/img/slider-co.jpg" alt="Zdjęcie ludzi analizujcych wykresy i dane">
+                            <div class="offers__box-img-shadow"></div>
+                        </div>
+                        <div class="offers__box-info">
+                            <h3>Zarejestruj firmę i ciesz się z bonusów!</h3>
+                            <p class="offers__box-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, ducimus deserunt.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart container" id="chart"></div>
+
+            <div class="accordion container">
+
+                <div class="accordion__box">
+                    <button class="accordion__box-btn"><i class="fa-solid fa-angles-right"></i> Ostania
+                        płatność</button>
+                    <div class="accordion__box-info">
+                        <p class="accordion__box-info-text"><span>Nazwa:</span> Picture_GROUP
+                        </p>
+                        <p class="accordion__box-info-text"><span>Tytuł:</span> Subscription_payment:FF23-296</p>
+                        <p class="accordion__box-info-text"><span>Płatność mobilna:</span> + 24 pkt</p>
+                    </div>
+                </div>
+
+                <div class="accordion__box">
+                    <button class="accordion__box-btn"><i class="fa-solid fa-angles-right"></i> Twoje
+                        punkty</button>
+                    <div class="accordion__box-info">
+                        <p class="accordion__box-info-text"><span>Picture_GROUP:</span> + 60 pkt</p>
+                        <p class="accordion__box-info-text"><span>Żaba:</span> + 12 pkt</p>
+                        <p class="accordion__box-info-text"><span>RTV-NET.zoo:</span> + 1630 pkt</p>
+                        <p class="accordion__box-info-text"><span>Przelew na telefon:</span> + 7 pkt
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion__box">
+                    <button class="accordion__box-btn"><i class="fa-solid fa-angles-right"></i> Zlecenia
+                        stałe</button>
+                    <div class="accordion__box-info">
+                        <p class="accordion__box-info-text">Brak zleconych płatności cyklicznych.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="messages-panel">
+            <h2 class="messages-panel-heading">Wiadomości</h2>
+
+
+            <div class="messages__box">
+
+                <div class="message__box">
+                    <div class="message__box-heading">
+                        <h3 class="message__box-heading-title">NG App - inwestuj wszędzie!</h3>
+                    </div>
+                    <div class="message__box-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque tenetur quaerat illo maxime.
+                        </p>
+                    </div>
+                    <button class="message__box-text-button btn" id="btn-1" data-showmessage="1"><i
+                            class="fas fa-angle-double-right"></i> Czytaj
+                        więcej</button>
+                </div>
+
+                <div class="message__box">
+                    <div class="message__box-heading">
+                        <h3 class="message__box-heading-title">Propozycja pożyczki dla Ciebie.</h3>
+                    </div>
+                    <div class="message__box-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque tenetur quaerat illo maxime.
+                        </p>
+                    </div>
+                    <button class="message__box-text-button btn" id="btn-2" data-showmessage="2"><i
+                            class="fas fa-angle-double-right"></i> Czytaj
+                        więcej</button>
+                </div>
+
+                <div class="message__box">
+                    <div class="message__box-heading">
+                        <h3 class="message__box-heading-title">Ważne zmiany w regulaminie.</h3>
+                    </div>
+                    <div class="message__box-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque tenetur quaerat illo maxime.
+                        </p>
+                    </div>
+                    <button class="message__box-text-button btn" id="btn-3" data-showmessage="3"><i
+                            class="fas fa-angle-double-right"></i> Czytaj więcej</button>
+                </div>
+
+                <div class="message__box">
+                    <div class="message__box-heading">
+                        <h3 class="message__box-heading-title">Wygrywaj w naszej loterii!</h3>
+                    </div>
+                    <div class="message__box-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque tenetur quaerat illo maxime.
+                        </p>
+                    </div>
+                    <button class="message__box-text-button btn" id="btn-4" data-showmessage="4"><i
+                            class="fas fa-angle-double-right"></i> Czytaj więcej</button>
+                </div>
+
+                <div class="message__box">
+                    <div class="message__box-heading">
+                        <h3 class="message__box-heading-title">Data składania wniosku dobiegła końca.</h3>
+                    </div>
+                    <div class="message__box-text">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque tenetur quaerat illo maxime.
+                        </p>
+                    </div>
+                    <button class="message__box-text-button btn" id="btn-5" data-showmessage="5"><i
+                            class="fas fa-angle-double-right"></i> Czytaj więcej</button>
+                </div>
+            </div>
+            <button class="messages-close"><i class="fa-regular fa-rectangle-xmark"></i></button>
+
+
+            <div class="messages__box-show-message-text">
+                <div class="welcome-message">
+                    <h3>Sprawdź swoje nowe wiadomości!</h3><i
+                        class="fa-solid fa-envelope"></i>
+                </div>
+                <button class="messages__box-show-message-text-btn"><i class="fa-regular fa-rectangle-xmark"></i></button>
+                <div class="message__box-show message__box-show--one" data-button="btn-1">
+                    <div class="message__box-show-heading message__box-show-heading--one">
+                        <h3>NG App - inwestuj wszędzie!</h3>
+                    </div>
+                    <div class="message__box-show-text message__box-show-text--one">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, consequuntur accusamus
+                            assumenda recusandae vel qui praesentium aperiam commodi ea velit voluptatum nemo fugit
+                            sapiente quas cumque quisquam tempore nulla libero?
+                        </p>
+                        <br>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta quia illo debitis, sunt
+                            accusamus labore autem reiciendis dolore eius adipisci. In nisi, cumque vel repellendus eos
+                            maiores debitis laboriosam consectetur blanditiis dolores eaque odit magnam ipsa expedita
+                            reprehenderit magni accusantium.</p>
+                        <br>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum dignissimos asperiores
+                            minima. Mollitia aperiam tempora voluptatibus doloremque totam dolores iure non natus maxime
+                            ipsa ad eveniet dignissimos numquam harum at accusantium qui, dicta ipsum vero ut
+                            necessitatibus! Voluptatibus quis culpa qui aperiam nesciunt molestias commodi assumenda
+                            inventore doloremque, laudantium suscipit hic facere explicabo dicta iusto distinctio fugiat
+                            id perferendis ab.</p>
+                    </div>
+                </div>
+                <div class="message__box-show message__box-show--two" data-button="btn-2">
+                    <div class="message__box-show-heading message__box-show-heading--two">
+                        <h3>Propozycja pożyczki dla Ciebie.</h3>
+                    </div>
+                    <div class="message__box-show-text message__box-show-text--two">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste aperiam, officiis corporis,
+                            quaerat veritatis ducimus odio ex nulla ad corrupti ea at, illum fugiat vel distinctio fuga
+                            magni excepturi blanditiis aliquid dolore laboriosam consequuntur rerum unde incidunt.
+                            Assumenda, deleniti, fugiat molestias ipsa atque numquam facilis tenetur impedit, corporis
+                            in et laboriosam aperiam voluptas quas quibusdam soluta cum deserunt quidem blanditiis.
+                            Commodi voluptatum quo deserunt, accusantium nulla ipsum fuga ratione. Totam!
+                        </p>
+                    </div>
+                </div>
+                <div class="message__box-show message__box-show--two" data-button="btn-3">
+                    <div class="message__box-show-heading message__box-show-heading--two">
+                        <h3>Ważne zmiany w regulaminie.</h3>
+                    </div>
+                    <div class="message__box-show-text message__box-show-text--two">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste aperiam, officiis corporis,
+                            quaerat veritatis ducimus odio ex nulla ad corrupti ea at, illum fugiat vel distinctio fuga
+                            magni excepturi blanditiis aliquid dolore laboriosam consequuntur rerum unde incidunt.
+                            Assumenda, deleniti, fugiat molestias ipsa atque numquam facilis tenetur impedit, corporis
+                            in et laboriosam aperiam voluptas quas quibusdam soluta cum deserunt quidem blanditiis.
+                            Commodi voluptatum quo deserunt, accusantium nulla ipsum fuga ratione. Totam!
+                        </p>
+                    </div>
+                </div>
+                <div class="message__box-show message__box-show--two" data-button="btn-4">
+                    <div class="message__box-show-heading message__box-show-heading--two">
+                        <h3>Wygrywaj w naszej loterii!</h3>
+                    </div>
+                    <div class="message__box-show-text message__box-show-text--two">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum in provident quaerat quidem
+                            hic rem dolores excepturi asperiores!
+                        </p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ratione consequatur odit eum
+                            quibusdam eligendi voluptatem mollitia labore, doloremque quae officia explicabo beatae eos
+                            magni modi nostrum autem, quam, voluptatum culpa vitae nobis officiis dolor natus iste.
+                            Autem eum cumque, minus sed corrupti mollitia quas architecto dolor in repudiandae ipsum
+                            inventore a officia consequuntur quia tempore, quam asperiores odit aliquid voluptatum?
+                            Magnam sequi ullam vel alias asperiores totam fuga recusandae excepturi optio nam quidem
+                            sunt, odit aperiam autem earum unde pariatur. Dolor, eum voluptate.</p>
+                    </div>
+                </div>
+
+                <div class="message__box-show message__box-show--two" data-button="btn-5">
+                    <div class="message__box-show-heading message__box-show-heading--two">
+                        <h3>Data składania wniosku dobiegła końca.</h3>
+                    </div>
+                    <div class="message__box-show-text message__box-show-text--two">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum in provident quaerat quidem
+                            hic rem dolores excepturi asperiores!
+                        </p>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ratione consequatur odit eum
+                            quibusdam eligendi voluptatem mollitia labore, doloremque quae officia explicabo beatae eos
+                            magni modi nostrum autem, quam, voluptatum culpa vitae nobis officiis dolor natus iste.
+                            Autem eum cumque, minus sed corrupti mollitia quas architecto dolor in repudiandae ipsum
+                            inventore a officia consequuntur quia tempore, quam asperiores odit aliquid voluptatum?
+                            Magnam sequi ullam vel alias asperiores totam fuga recusandae excepturi optio nam quidem
+                            sunt, odit aperiam autem earum unde pariatur. Dolor, eum voluptate.</p>
+                        <br>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non placeat, debitis molestiae qui
+                            nam ea, quae asperiores accusantium deleniti facere ut. Veniam dicta odit iste voluptatem
+                            aspernatur exercitationem dolore consequuntur labore quidem quasi perferendis, facere
+                            suscipit placeat, necessitatibus maiores commodi rerum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer__box">
+                <div class="footer__box-item">
+                    <h3>główna siedziba</h3>
+                    <p>ul. Halabardników Śląskich 17C</p>
+                    <p>32-532 Warszawa</p>
+                    <p>+48 996 785 220</p>
+                    <p>ngbank@toor.com</p>
+                </div>
+
+                <div class="footer__box-item">
+                    <h3>social media</h3>
+                    <div class="social-media">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__box-item">
+                    <h3>siedziba w londynie</h3>
+                    <p>780-522 King Street</p>
+                    <p>London 556 666</p>
+                    <p>+44 20 9965 3331</p>
+                    <p>ngbank_london@toor.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-shadow"></div>
+        <p class="copy"> &copy; <span class="footer__year"></span> | Next Gen Bank</p>
+    </footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./dist/js/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="./dist/js/script_acc_chart.min.js"></script>
+    <script src="./dist/js/script_acc_transactions.min.js"></script>
+    <script src="./dist/js/script_acc.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,650 @@
+@use 'colors' as *;
+@use 'mixins' as *;
+@use 'components' as *;
+@use 'css_reset' as *;
+
+html {
+	font-size: 62.5%;
+	scroll-padding-top: 88px;
+	scroll-behavior: smooth;
+}
+
+.body {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.6rem;
+	background-color: $darkblue;
+
+	&-lock {
+		overflow: hidden;
+	}
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.link-animation {
+	position: relative;
+	display: inline-block;
+	margin: 0.2em;
+	padding: 0.4em;
+	font-size: 2rem;
+	color: $dark;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: color 0.3s;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		bottom: 0;
+		border-bottom: 2px solid $gold;
+		transition: 0.3s;
+	}
+
+	&::before {
+		right: 50%;
+	}
+
+	&::after {
+		left: 50%;
+	}
+
+	&:hover::before,
+	&:hover::after {
+		width: 50%;
+	}
+}
+
+// ---NAV---
+
+.nav__items-desktop {
+	display: none;
+}
+
+.wrapper-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	top: 0;
+	padding: 0.8em 0;
+	width: 100%;
+	border-bottom: 2px solid $gold;
+	background-image: $main-gradient;
+	transition: background-color 0.6s;
+	z-index: 100;
+
+	&__logo {
+		font-weight: bold;
+		font-size: 2.4rem;
+		margin-left: 0.5em;
+		margin-right: auto;
+		padding: 0.7em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $main;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $gold;
+		}
+	}
+
+	&__logo span {
+		color: $gold;
+	}
+
+	&__items {
+		&-mobile {
+			position: fixed;
+			top: 0;
+			right: 0;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			height: 100vh;
+			width: 100%;
+			transform: translateY(-300%);
+			transition: transform 0.8s;
+			background-color: $main;
+			z-index: 1000;
+
+			&--active {
+				transform: translateY(0);
+			}
+		}
+	}
+
+	&__item {
+		color: $main;
+
+		&-mobile {
+			margin: 1.3em;
+		}
+	}
+
+	&__burger-btn {
+		position: fixed;
+		top: 17px;
+		right: 17px;
+		padding: 1em;
+		background: none;
+		border: 2px solid transparent;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.6s;
+		z-index: 1000;
+
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+
+		&:hover {
+			.nav__burger-btn__bars::after,
+			.nav__burger-btn__bars::before {
+				width: 100%;
+			}
+		}
+
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+
+		&__bars,
+		&__bars::after,
+		&__bars::before {
+			position: absolute;
+			right: 0;
+			height: 3px;
+			content: '';
+			background-color: $gold;
+			border-radius: 2px;
+			transition: width 0.3s;
+		}
+
+		&__bars {
+			width: 100%;
+
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+
+			&::before {
+				top: 27px;
+				width: 30%;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+}
+
+.fa-circle-user {
+	font-size: 2.3rem;
+}
+
+.header h1 span {
+	color: $gold;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5em;
+	text-align: center;
+	color: $main;
+	background-size: cover;
+	background-position: center;
+
+	&__heading-acc {
+		font-size: 2.6rem;
+		text-transform: uppercase;
+		z-index: 11;
+
+		span {
+			color: $gold;
+		}
+	}
+
+	&__hero-img {
+		position: absolute;
+		height: 100%;
+		width: 200%;
+		background-image: $acc-gradient, url('/src/img/hero-img_acc.jpg');
+		background-size: cover;
+		background-position: bottom;
+		background-attachment: fixed;
+		z-index: 10;
+	}
+}
+
+// ---CURRENCY---
+
+.currency-btn {
+	margin: 2em 0;
+	padding: 0.7em 1.7em;
+	font-size: 2.2rem;
+	background-color: $main;
+	color: $dark;
+	border-radius: 6px;
+	text-transform: uppercase;
+	font-weight: 900;
+
+	&::before {
+		background-color: $gold;
+	}
+}
+
+.exchange__modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: max-content;
+	transform: translate(-50%, -50%) scale(0);
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 8px;
+	border: 1px solid $gold;
+	background-image: $lightwhite-gradient;
+	transition: transform 0.3s;
+	z-index: 100;
+
+	h3 {
+		margin: 0.6em 2em;
+		text-align: center;
+		font-size: 1.7rem;
+		color: $dark;
+	}
+
+	&-btns {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0.5em 0.5em;
+	}
+
+	&-close {
+		position: absolute;
+		// margin: 0.7em;
+		padding: 0.5em;
+		top: 0;
+		right: 0;
+		font-size: 1.8rem;
+		color: $dark;
+		background-color: transparent;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $gold;
+		}
+	}
+
+	&--active {
+		display: flex;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.exchange-btn {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 1em;
+	padding: 0.7em 1.7em;
+	font-size: 2.2rem;
+	font-weight: 900;
+	background-color: $dark;
+	color: $main;
+	border-radius: 6px;
+	text-transform: uppercase;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: $gold;
+	}
+
+	img {
+		margin-right: 5px;
+		border-radius: 4px;
+	}
+}
+
+// ---TABLE---
+
+.coinTable {
+	border-collapse: collapse;
+	white-space: nowrap;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.coinTable tr {
+	padding: 0.4em;
+	background-color: $main;
+	border-bottom: 1px solid $table;
+	transition: background-color 0.1s;
+
+	&:hover {
+		background-color: $table;
+	}
+}
+
+.coinTable th,
+.coinTable td {
+	position: relative;
+	padding: 1em;
+	text-align: left;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+}
+
+.coinTable th {
+	font-size: 1rem;
+	letter-spacing: 0.1em;
+	border-bottom: 2px solid $gold;
+	color: $gold;
+	background-color: $dark;
+	transition: background-color 0.3s, color 0.3s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $gold;
+		color: $main;
+	}
+}
+
+.positive-num {
+	color: $green;
+}
+
+.negative-num {
+	color: $red;
+}
+
+// ---FOOTER---
+
+.footer {
+	position: relative;
+	padding: 6em 0;
+	background-image: url('../img/hero-footer-small.jpg');
+	background-position: top;
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: $main;
+
+		h3 {
+			font-size: 1.8rem;
+			margin-bottom: 1.5em;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		&-item {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: column;
+			// justify-content: center;
+			align-items: center;
+			margin: 1em;
+
+			p {
+				font-size: 1.8rem;
+				margin: 0.3em;
+			}
+
+			.social-media {
+				display: flex;
+				flex-wrap: nowrap;
+				font-size: 2.6rem;
+
+				a {
+					padding: 1em;
+					color: $main;
+				}
+
+				a:hover {
+					color: $gold;
+				}
+			}
+		}
+	}
+
+	&-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(1, 14, 27, 0.8);
+		z-index: -5;
+	}
+
+	.copy {
+		display: block;
+		text-align: center;
+		padding: 1em;
+		color: $main;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.active {
+	color: $gold;
+}
+
+// ---MEDIA---
+
+// 576
+@media (min-width: 576px) {
+	.nav {
+		&__logo {
+			font-size: 2.6rem;
+		}
+
+		&__item {
+			&-mobile {
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.header {
+		&__heading-acc {
+			font-size: 3rem;
+		}
+	}
+}
+
+// 768
+@media (min-width: 768px) {
+	html {
+		scroll-padding-top: 95px;
+	}
+
+	.nav {
+		&__logo {
+			font-size: 2.6rem;
+		}
+
+		&__item {
+			&-mobile {
+				font-size: 3rem;
+			}
+		}
+	}
+
+	.header {
+		padding: 2em;
+		&__heading-acc {
+			font-size: 3.6rem;
+		}
+	}
+
+	.exchange__modal {
+		&-btns {
+			flex-direction: row;
+		}
+	}
+
+	.coinTable th {
+		font-size: 1.1rem;
+	}
+
+	.coinTable td {
+		font-size: 1.2rem;
+	}
+
+	.footer {
+		&__box {
+			flex-direction: row;
+
+			h3 {
+				font-size: 1.8rem;
+			}
+
+			&-item {
+				margin: 1em 0.3em;
+
+				p {
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+}
+
+// 992
+@media (min-width: 992px) {
+	main {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	.nav {
+		&__logo {
+			font-size: 2.7rem;
+		}
+
+		&__burger-btn {
+			display: none;
+		}
+
+		&__items-desktop {
+			display: flex;
+		}
+	}
+
+	.header {
+		padding: 2em;
+		&__heading-acc {
+			font-size: 4.2rem;
+		}
+	}
+
+	.coinTable th {
+		font-size: 1.4rem;
+	}
+
+	.coinTable td {
+		font-size: 1.5rem;
+	}
+
+	.footer {
+		background-image: url('../img/hero-footer-big.jpg');
+
+		&__box {
+			h3 {
+				font-size: 2.2rem;
+			}
+
+			&-item {
+				margin: 1.2em 1em;
+
+				p {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 680px) {
+	.coinTable {
+		border: 0;
+	}
+
+	.coinTable thead {
+		border: none;
+		clip-path: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	.coinTable tr {
+		display: block;
+		margin-bottom: 0.6em;
+		pointer-events: none;
+	}
+
+	.coinTable td {
+		border-bottom: 1px solid #ddd;
+		display: block;
+		font-size: 1.2rem;
+		text-align: right;
+		pointer-events: none;
+	}
+
+	.coinTable td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+	}
+
+	.coinTable td:last-child {
+		border-bottom: 0;
+	}
+
+	.coinTable td:nth-child(even) {
+		background-color: #ddd;
+	}
+}
