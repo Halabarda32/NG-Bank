@@ -22,7 +22,7 @@ User account allows to monitor revenue and expenditure and to support all necess
 
 <br />
 
-### Setup
+### Setup 🔧
 
 To run this project, install it locally using npm:
 
