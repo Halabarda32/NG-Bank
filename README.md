@@ -47,9 +47,6 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 If you have any feedback, please reach out to me at krzysztof.kierylowski@gmail.com or use LinkedIn instead.
 
-&nbsp;&nbsp;
-[![website](./img/linkedin-light.svg)](https://linkedin.com/in/codeSTACKr#gh-light-mode-only)
-[![website](./img/linkedin-dark.svg)](https://linkedin.com/in/codeSTACKr#gh-dark-mode-only)
+[1]: www.linkedin.com/in/krzysztof-kieryłowski-118586251
+[!<img align="left" alt="Linkedin" width="26px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/linkedin.svg" style="padding-right:10px;" />][1]
 
-[[website](./img/linkedin-light.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
-[[website](./img/linkedin-dark.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
