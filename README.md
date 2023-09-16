@@ -47,5 +47,5 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 If you have any feedback, please reach out to me at krzysztof.kierylowski@gmail.com or use LinkedIn instead.
 
-[![website](./img/linkedin-light.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
-[![website](./img/linkedin-dark.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
+[[website](./img/linkedin-light.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
+[[website](./img/linkedin-dark.svg)](www.linkedin.com/in/krzysztof-kieryłowski-118586251)
