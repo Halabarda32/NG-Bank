@@ -1,4 +1,4 @@
-# Hi there, and welcome on my Next Gen Bank web application! 💲💰
+# Hi there, and welcome on my Next Gen Bank web application! 💲
 
 ## About the project! 🔎
 
@@ -28,7 +28,7 @@ To run this project, install it locally using npm:
 - gulp
 ```
 
-### Connect with me:
+### Feedback👍:
 
 If you have any feedback, please reach out to us at krzysztof.kierylowski@gmail.com or use LinkedIn instead.
 
