@@ -30,9 +30,12 @@ To run this project, install it locally using npm:
 - npm install gulp --save-dev
 - gulp
 ```
+
 If you get error:
+
 > _\path\gulp.ps1_ cannot be loaded because running scripts is disabled on this system.
-Just type:
+> Just open PowerShell in administrative mode and run the following command
+
 ```
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 ```
