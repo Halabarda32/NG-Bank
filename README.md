@@ -1,7 +1,7 @@
 # Hi there, and welcome on my Next Gen Bank web application!💲
 
 ![ss_1](https://github.com/Halabarda32/NG-Bank/assets/51050405/56eedd50-37dd-4092-9c05-72e2c8214709)
-![ss_6](https://github.com/Halabarda32/NG-Bank/assets/51050405/357bdfd1-48e4-44a7-88c0-683cffc1f580)
+![ss_8](https://github.com/Halabarda32/NG-Bank/assets/51050405/b090ee32-0693-44db-b144-8908924ccbbd)
 
 ## 💻Live💻
 
