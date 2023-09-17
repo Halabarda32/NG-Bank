@@ -47,7 +47,7 @@ Just open PowerShell in administrative mode and run the following command
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 ```
 
-### Feedback👍:
+### Feedback 👍
 
 If you have any feedback, please reach out to me at krzysztof.kierylowski@gmail.com or use LinkedIn instead.
 
