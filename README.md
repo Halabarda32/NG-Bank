@@ -1,4 +1,7 @@
-# Hi there, and welcome on my Next Gen Bank web application! 💲
+# Hi there, and welcome on my Next Gen Bank web application!💲
+
+![ss_1](https://github.com/Halabarda32/NG-Bank/assets/51050405/56eedd50-37dd-4092-9c05-72e2c8214709)
+![ss_8](https://github.com/Halabarda32/NG-Bank/assets/51050405/b090ee32-0693-44db-b144-8908924ccbbd)
 
 ## 💻Live💻
 
@@ -8,7 +11,7 @@
 
 My project is a complete banking application. It has a homepage, a user account and an application to track the current prices of cryptocurrencies.
 On the main page you can find out more about the bank and get acquainted with the offer, read user reviews as well as ask questions on topics of interest to you in the dedicated form for this.
-User account allows to monitor revenue and expenditure and to support all necessary operations. The web application also uses an [I'm an inline-style link](https://docs.coincap.io) API that allows you to track the prices of the most popular cryptocurrencies in real time.
+User account allows to monitor revenue and expenditure and to support all necessary operations. The web application also uses [CoinCap API 2.0](https://docs.coincap.io) API that allows you to track the prices of the most popular cryptocurrencies in real time.
 
 ### Technologies used 💎
 
@@ -46,11 +49,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
 ### Feedback👍:
 
-If you have any feedback, please reach out to me at krzysztof.kierylowski@gmail.com or use LinkedIn instead. [<img align="left" alt="Linkedin" width="26px" src="https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/linkedin.svg" style="padding-right:10px; color: #fff;" />][1]
+If you have any feedback, please reach out to me at krzysztof.kierylowski@gmail.com or use LinkedIn instead.
 
 [1]: [https://www.linkedin.com/in/krzysztof-kieryłowski-118586251]
-
-
-
-
-
+[<img align="left" alt="Linkedin" width="26px" src="https://github.com/devicons/devicon/blob/v2.15.1/icons/linkedin/linkedin-original.svg" style="padding-right:10px; color: #fff;" />][1]
