@@ -11,7 +11,7 @@
 
 My project is a complete banking application. It has a homepage, a user account and an application to track the current prices of cryptocurrencies.
 On the main page you can find out more about the bank and get acquainted with the offer, read user reviews as well as ask questions on topics of interest to you in the dedicated form for this.
-User account allows to monitor revenue and expenditure and to support all necessary operations. The web application also uses an [CoinCap API 2.0](https://docs.coincap.io) API that allows you to track the prices of the most popular cryptocurrencies in real time.
+User account allows to monitor revenue and expenditure and to support all necessary operations. The web application also uses [CoinCap API 2.0](https://docs.coincap.io) API that allows you to track the prices of the most popular cryptocurrencies in real time.
 
 ### Technologies used 💎
 
