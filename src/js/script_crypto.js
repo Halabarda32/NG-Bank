@@ -34,6 +34,8 @@ const fetchCoinData = async () => {
 			button.addEventListener('click', () => {
 				const currency = button.getAttribute('data-currency')
 				exchangePrice(currency, coins)
+				currencyBtn.textContent = currency
+				currencyBtn.innerHTML = `${currency} <i class="fa-solid fa-caret-down"></i>`
 			})
 		})
 	} catch (error) {
@@ -83,7 +85,7 @@ const fetchRatesData = async () => {
 				symbol: rates.find(rate => rate.symbol === 'PLN').symbol,
 			},
 			USD: {
-				rate: 1.00,
+				rate: 1.0,
 				symbol: rates.find(rate => rate.symbol === 'USD').symbol,
 			},
 		}
@@ -144,7 +146,6 @@ const handleCurrentYear = () => {
 }
 handleCurrentYear()
 
-
 const handleCurrency = () => {
 	bodySite.classList.add('body-lock')
 	curerncyModal.classList.toggle('exchange__modal--active')
@@ -170,4 +171,3 @@ document.addEventListener('DOMContentLoaded', function () {
 navBtn.addEventListener('click', handleNav)
 currencyBtn.addEventListener('click', handleCurrency)
 modalCloseBtn.addEventListener('click', closeCurrency)
-

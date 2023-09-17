@@ -24,15 +24,18 @@ const scrollMargin = {
 
 const showCookie = () => {
 	const cookieEaten = localStorage.getItem('cookie')
+	bodySite.classList.add('body-lock')
 
 	if (cookieEaten) {
 		cookieBox.classList.add('hide')
+		bodySite.classList.remove('body-lock')
 	}
 }
 
 const handleCookieBox = () => {
 	localStorage.setItem('cookie', 'true')
 	cookieBox.classList.add('hide')
+	bodySite.classList.remove('body-lock')
 }
 
 showCookie()
